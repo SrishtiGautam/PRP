@@ -23,8 +23,8 @@ img_variable = Variable(img.unsqueeze(0))/255
 img_tensor = preprocess(img_variable,mean,std)
 images_test = img_variable.to(device)
 prp_map = generate_prp_image(images_test, prototype_number, prp_model, device)
-makedir("Test images/PRP/")
-plt.imsave("Test images/PRP/"+"prp_"+str(prototype_number)+"_"+test_image_name, prp_map, cmap="seismic", vmin=-1, vmax=+1)
+makedir(write_path)
+plt.imsave(write_path+"prp_"+str(prototype_number)+"_"+test_image_name, prp_map, cmap="seismic", vmin=-1, vmax=+1)
 
 
 
