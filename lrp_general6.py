@@ -2124,7 +2124,7 @@ class l2_lrp_class(torch.autograd.Function):
 
         conv = conv.squeeze()
 
-        l2 = (conv - prototype) ** 2
+        l2 = (conv - prototype)
         d = 1 / (l2 ** 2 + 1e-12)
 
         denom = torch.sum(d, dim=1, keepdim=True) + 1e-12
